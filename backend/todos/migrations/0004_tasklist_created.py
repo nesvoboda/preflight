@@ -7,14 +7,16 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('todos', '0003_auto_20201105_1120'),
+        ("todos", "0003_auto_20201105_1120"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='tasklist',
-            name='created',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now),
+            model_name="tasklist",
+            name="created",
+            field=models.DateTimeField(
+                auto_now_add=True, default=django.utils.timezone.now
+            ),
             preserve_default=False,
         ),
     ]

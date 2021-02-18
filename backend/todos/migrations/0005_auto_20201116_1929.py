@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('todos', '0004_tasklist_created'),
+        ("todos", "0004_tasklist_created"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='tasklist',
-            name='key',
+            model_name="tasklist",
+            name="key",
             field=models.CharField(max_length=255, unique=True),
         ),
     ]

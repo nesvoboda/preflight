@@ -7,25 +7,37 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('todos', '0001_initial'),
+        ("todos", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='TaskList',
+            name="TaskList",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('key', models.CharField(max_length=255)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("key", models.CharField(max_length=255)),
             ],
         ),
         migrations.AddField(
-            model_name='task',
-            name='done',
+            model_name="task",
+            name="done",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='task',
-            name='lst',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='todos.TaskList'),
+            model_name="task",
+            name="lst",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="todos.TaskList",
+            ),
         ),
     ]

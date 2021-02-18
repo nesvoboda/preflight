@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV DJANGO_SETTINGS_MODULE guac_bac.settings
+ENV DJANGO_SETTINGS_MODULE preflight-backend.settings
 
 RUN apk add gcc musl-dev libffi-dev libressl-dev 
 

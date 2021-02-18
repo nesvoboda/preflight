@@ -1,5 +1,5 @@
 """
-ASGI config for guac_bac project.
+ASGI config for preflight-backend project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,7 +11,7 @@ import os
 
 import django
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'guac_bac.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "preflight-backend.settings")
 django.setup()
 
 from channels.auth import AuthMiddlewareStack
@@ -21,11 +21,11 @@ import todos.routing
 
 
 # application = get_asgi_application()
-application = ProtocolTypeRouter({
-    "http": get_asgi_application(),
-    "websocket": AuthMiddlewareStack(
-        URLRouter(
-            todos.routing.websocket_urlpatterns
-        )
-    ),
-})
+application = ProtocolTypeRouter(
+    {
+        "http": get_asgi_application(),
+        "websocket": AuthMiddlewareStack(
+            URLRouter(todos.routing.websocket_urlpatterns)
+        ),
+    }
+)
