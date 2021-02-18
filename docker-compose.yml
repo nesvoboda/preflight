@@ -1,0 +1,32 @@
+version: "3.3"
+   
+services:
+  # db:
+  #   image: postgres
+  #   environment:
+  #     - POSTGRES_DB=postgres
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+
+  ofelia:
+    image: mcuadros/ofelia:latest
+    depends_on:
+      - web
+    command: daemon --docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  web:
+    build: ./backend/
+    command: python manage.py runserver 0.0.0.0:7999
+    #command: daphne --bind 0.0.0.0 --p 7999 guac_bac.asgi:application
+    volumes:
+      - ./backend/:/code
+    ports:
+      - "7999:7999"
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-exec.datecron.schedule: "@every 10m"
+      ofelia.job-exec.datecron.command: "python3 manage.py cleanup"
+    # depends_on:
+    #   - db

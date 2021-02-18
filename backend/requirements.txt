@@ -1,0 +1,7 @@
+Django
+django-cors-headers
+channels
+requests
+django-environ
+uvicorn
+coolname
