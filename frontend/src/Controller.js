@@ -14,7 +14,7 @@ class Controller extends React.Component {
     
     connect(listName) {
         let ws = new WebSocket(
-            'wss://' + process.env.REACT_APP_BACKEND_URL
+            'ws://' + process.env.REACT_APP_BACKEND_URL
             + '/ws/chat/'
             + listName
             + '/'
@@ -58,6 +58,8 @@ class Controller extends React.Component {
         else
         {
             listName = window.location.pathname.substring(1);
+            this.props.updateListName(listName);
+            // window.sessionStorage.setItem('listName', listName);
         }
         this.connect(listName);
     }
@@ -70,7 +72,7 @@ class Controller extends React.Component {
         if (ws && ws.readyState === 1) {
             return (
                 <div>
-                    <TaskList ws={ws} sec={(code) => {this.setErrorCode(code);}}/>
+                    <TaskList ws={ws} sec={(code) => {this.setErrorCode(code);}} updateListName={this.props.updateListName}/>
                 </div>
             );
         }

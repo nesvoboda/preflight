@@ -7,12 +7,10 @@ class Todo extends React.Component {
     render() {
         
         // var todoBaseClass = "my-5 border-2 rounded items-center"
-        var todoBaseClass = "col-span-11 rounded-l-lg py-2 items-center";
+        var todoBaseClass = "col-span-11 rounded-l-lg py-4 items-center";
         var allClass = "";
-        // var allClass = "my-5 border-2 bg-white z-30 border-gray-200 col-span-10 grid grid-cols-10 rounded items-center";
         if (this.props.todo.done)
         {
-            // allClass = "my-5 border-2 border-green-200 bg-white z-50 col-span-10 grid grid-cols-10 rounded items-center bg-green-100 text-green-300";
             allClass = todoBaseClass + " border-green-100 bg-green-50 text-green-400"
         }
         else {

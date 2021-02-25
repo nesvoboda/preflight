@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 
-# from todos.views import index, room, create_list
+from todos.views import index
 
 urlpatterns = [
     # path('<str:room_name>/', room, name='room'),
     # path('admin/', admin.site.urls),
-    # path('', index),
+    path('', index),
 ]

@@ -39,6 +39,9 @@ class TaskList extends React.Component {
                 this.props.sec(msg.code);
             } else if (msg.kind === 'move-to') {
                 window.history.replaceState(null, '', msg.key);
+                this.props.updateListName(msg.key);
+                alert('Updated list name');
+                // window.sessionStorage.setItem('listName', msg.key);
             }
         };
 
@@ -162,7 +165,7 @@ class TaskList extends React.Component {
                                 <h1 className="font-bold text-2xl text-gray-700">Tasks</h1>
                             </div>
                             <div className="col-start-7 col-end-13 justify-self-end">
-                                <button id="copyButton" className="py-2 md:py-4 px-2 md:px-4 bg-gray-300 rounded text-xs md:text-md lg:text-lg text-gray-800 font-bold hover:bg-blue-300" onClick={this.doCopy}>Share this checklist   <span className="sm:pl-1">📋</span></button>
+                                <button id="copyButton" className="py-2 md:py-4 px-2 md:px-4 bg-gray-300 rounded text-xs md:text-md lg:text-lg text-gray-800 font-bold hover:bg-blue-300" onClick={this.doCopy}>Share link   <span className="sm:pl-1">📋</span></button>
                             </div>
                         </div>
                         <div className="mt-5">

@@ -30,3 +30,23 @@ services:
       ofelia.job-exec.datecron.command: "python3 manage.py cleanup"
     # depends_on:
     #   - db
+    #networks:
+    #  - app-network
+
+
+  revproxy:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+    #networks:
+    #  - app-network
+  test-nginx:
+    image: nginx:latest
+
+
+#Docker Networks
+#networks:
+#  app-network:
+#    driver: bridge

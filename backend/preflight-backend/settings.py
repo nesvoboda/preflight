@@ -33,7 +33,7 @@ SECRET_KEY = "iumpnh2kmd5j!5!vb^e-t2d%$f(nzp(hby^zjia+wvlp!kh55s"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = ["guac.quick-quail.xyz", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
