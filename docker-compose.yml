@@ -1,12 +1,14 @@
 version: "3.3"
    
 services:
-  # db:
-  #   image: postgres
-  #   environment:
-  #     - POSTGRES_DB=postgres
-  #     - POSTGRES_USER=postgres
-  #     - POSTGRES_PASSWORD=postgres
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=analytics
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${PSQL_PASSWORD}
+    ports:
+      - "5432:5432"
 
   ofelia:
     image: mcuadros/ofelia:latest
