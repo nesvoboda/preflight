@@ -14,7 +14,7 @@ class Controller extends React.Component {
     
     connect(listName) {
         let ws = new WebSocket(
-            'ws://' + process.env.REACT_APP_BACKEND_URL
+            'wss://' + process.env.REACT_APP_BACKEND_URL
             + '/ws/chat/'
             + listName
             + '/'
