@@ -1,6 +1,7 @@
 import React from 'react';
 import TaskList from './TaskList.js';
 import ErrorScreen from './ErrorScreen.js';
+import Footer from './Footer.js';
 
 class Controller extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class Controller extends React.Component {
     
     connect(listName) {
         let ws = new WebSocket(
-            'ws://' + process.env.REACT_APP_BACKEND_URL
+            'wss://' + process.env.REACT_APP_BACKEND_URL
             + '/ws/chat/'
             + listName
             + '/'
@@ -71,8 +72,9 @@ class Controller extends React.Component {
     renderTaskList(ws) {
         if (ws && ws.readyState === 1) {
             return (
-                <div>
+                <div className="pb-12">
                     <TaskList ws={ws} sec={(code) => {this.setErrorCode(code);}} updateListName={this.props.updateListName}/>
+                    <Footer/>
                 </div>
             );
         }

@@ -7,7 +7,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 
@@ -33,7 +32,7 @@ class App extends React.Component {
                     
                     <div className="px-6 md:px-12 lg:px-40">
                         <Nav listName={this.state.listName}/>
-                        <div className="mt-16">
+                        <div className="mt-6">
                             <Switch>
                                 <Route path="/about">
                                     <About />

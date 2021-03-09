@@ -1,6 +1,6 @@
 function About(props) {
       return (
-      	<div>
+      	<div className="pb-12">
       		<h2 className="text-2xl font-bold">About Preflight</h2>
       		<div className="mt-5">
       			<p>Preflight is a small web-app for people who want to collaborate on a set of tasks.</p>
@@ -11,7 +11,7 @@ function About(props) {
       		</div>
       		<h2 className="text-2xl font-bold mt-10">Feedback</h2>
       		<div className="mt-5">
-      			<p>We would <strong>love</strong> to hear feedback from you!</p>
+      			<p>We would <strong>love</strong> to hear your feedback!</p>
       			<p className="mt-3">Drop us a line at <a className="underline" href="mailto:hi@pre-flight.link">hi@pre-flight.link</a> ;).</p>
       		</div>
       	</div>

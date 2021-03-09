@@ -17,7 +17,7 @@ class Todo extends React.Component {
             allClass = todoBaseClass + " border-gray-100 bg-white";
         }
         return (
-            <div className="grid grid-cols-12 items-center my-4 bg-transparent rounded-lg shadow-lg">
+            <div className="grid grid-cols-12 items-center my-4 bg-transparent rounded-lg shadow-md">
                 <div className={allClass}>
                     <div className="grid grid-cols-12 items-center">
                         <div className="col-span-7">

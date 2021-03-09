@@ -33,10 +33,11 @@ class Nav extends React.Component {
 				<div className="mt-10 flex items-center">
 					<div className="flex-grow">
 						<h1 className="font-bold text-s md:text-3xl">Preflight 🛫</h1>
-						<p className="text-gray-700 text-xs md:text-xl">Share checklists with a click.</p>
+						<p className="text-gray-700 text-xs md:text-xl">Work on to-do lists together.</p>
+						<p className="text-gray-700 text-xs md:text-xl">Just copy the link!</p>
 					</div>
 					<div className=" flex-grow-0 md:ml-20">
-						<div className="font-bold text-black md:text-xl text-gray-800 underline hover:no-underline">
+						<div className="font-bold text-black md:text-xl text-gray-700 underline hover:no-underline">
 							<Switch>
 	                                <Route path="/about">
 	                                    <Link to={backLink}><h1>Back to app</h1></Link>
